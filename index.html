@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Moonshine Lounge | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body, html { height: 100%; background-color: #050505; font-family: 'Plus Jakarta Sans', sans-serif; overflow: hidden; color: #ffffff; }
+
+        /* Background Animation */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Center mein elements ek ke niche ek aayenge */
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('lodge.jpg');
+            background-size: cover;
+            background-position: center;
+            animation: zoomBg 20s infinite alternate ease-in-out;
+        }
+
+        .brand-name {
+            text-align: center;
+            z-index: 2;
+            animation: float 4s infinite ease-in-out;
+            margin-bottom: 30px; /* Name aur Button ke beech gap */
+        }
+
+        .brand-name h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-style: italic;
+            line-height: 1.1;
+        }
+
+        .brand-name h1 span {
+            color: #D4AF37;
+            animation: glow 3s infinite alternate ease-in-out;
+        }
+
+        /* --- BOOK NOW BUTTON --- */
+        .book-btn {
+            z-index: 10;
+            display: inline-block;
+            background-color: #D4AF37;
+            color: #000;
+            text-decoration: none;
+            padding: 15px 40px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            border-radius: 50px;
+            transition: 0.4s all ease;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            animation: pulse 2s infinite; /* Continuous pulsing animation */
+        }
+
+        .book-btn:hover {
+            background-color: #ffffff;
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+        }
+
+        /* --- FIXED BOTTOM NAVIGATION --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 40px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-item {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.3em;
+            opacity: 0.6;
+            transition: 0.4s;
+        }
+
+        .nav-item:hover, .active { opacity: 1; color: #D4AF37; }
+
+        /* --- ANIMATIONS --- */
+        @keyframes zoomBg { from { transform: scale(1); } to { transform: scale(1.1); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes glow { from { text-shadow: 0 0 10px rgba(212, 175, 55, 0.2); } to { text-shadow: 0 0 30px rgba(212, 175, 55, 0.8); } }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        @media (max-width: 600px) {
+            .bottom-nav { gap: 15px; width: 90%; justify-content: center; bottom: 20px; padding: 10px; }
+            .nav-item { font-size: 8px; letter-spacing: 0.1em; }
+            .book-btn { padding: 12px 30px; font-size: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="brand-name">
+            <h1>The Moonshine <span>Lounge</span></h1>
+        </div>
+
+        <a href="https://wa.me/919568193120?text=Hello!%20I%20want%20to%20book%20a%20table%20at%20The%20Moonshine%20Lounge." 
+           class="book-btn" target="_blank">
+            Book a Table
+        </a>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">Home</a>
+        <a href="menu.html" class="nav-item">Menu</a>
+        <a href="gallery.html" class="nav-item">Gallery</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+    </nav>
+</body>
+</html>

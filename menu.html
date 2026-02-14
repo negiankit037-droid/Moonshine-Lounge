@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | The Moonshine Lounge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #050505; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+
+        /* Header Section */
+        .menu-header {
+            padding: 100px 5% 40px;
+            text-align: center;
+            background: linear-gradient(to bottom, #111, #050505);
+        }
+        .menu-header h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-style: italic; color: #D4AF37; }
+        .menu-header p { letter-spacing: 0.5em; font-size: 10px; color: #666; text-transform: uppercase; margin-top: 10px; }
+
+        /* Sticky Category Nav */
+        .category-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 20px 0;
+            z-index: 100;
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            padding-left: 5%;
+            scrollbar-width: none;
+        }
+        .category-nav::-webkit-scrollbar { display: none; }
+        .cat-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: 0.3s;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .cat-link:hover { color: #D4AF37; }
+
+        /* Menu Container */
+        .menu-container { padding: 20px 8% 150px; }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin: 60px 0 25px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 10px;
+            font-style: italic;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 15px 60px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .item-info h4 { font-size: 0.95rem; font-weight: 400; display: flex; align-items: center; }
+        .price { color: #D4AF37; font-weight: 600; font-size: 0.95rem; }
+        
+        /* Indicators */
+        .veg-dot::before { content: '●'; color: #2ecc71; font-size: 10px; margin-right: 10px; border: 1px solid #2ecc71; padding: 0 2px; }
+        .non-veg-dot::before { content: '●'; color: #e74c3c; font-size: 10px; margin-right: 10px; border: 1px solid #e74c3c; padding: 0 2px; }
+
+        /* Bottom Nav bar */
+        .bottom-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 35px;
+            border-radius: 50px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            width: fit-content;
+        }
+        .nav-item { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 10px; letter-spacing: 0.2em; opacity: 0.6; }
+        .active { color: #D4AF37 !important; opacity: 1 !important; }
+
+        @media (max-width: 600px) {
+            .menu-grid { grid-template-columns: 1fr; }
+            .bottom-nav { width: 95%; gap: 12px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-header">
+        <h1>Our <span>Cuisine</span></h1>
+        <p>Haldwani's Finest Flavours</p>
+    </div>
+
+    <div class="category-nav">
+        <a href="#combos" class="cat-link">Combos</a>
+        <a href="#soups" class="cat-link">Soups & Salads</a>
+        <a href="#nv-starters" class="cat-link">Non-Veg Starters</a>
+        <a href="#v-starters" class="cat-link">Veg Starters</a>
+        <a href="#main" class="cat-link">Main Course</a>
+        <a href="#breads" class="cat-link">Breads</a>
+        <a href="#rice" class="cat-link">Rice & Biryani</a>
+        <a href="#chinese" class="cat-link">Chinese</a>
+        <a href="#pizza" class="cat-link">Pizza & Pasta</a>
+        <a href="#burgers" class="cat-link">Burgers & Sandwiches</a>
+        <a href="#snacks" class="cat-link">Snacks</a>
+        <a href="#beverages" class="cat-link">Beverages</a>
+    </div>
+
+    <div class="menu-container">
+        
+        <h2 id="combos" class="section-title">Combos</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Pasta, Garlic Bread & Coke</h4></div><div class="price">₹299</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Manchurian, Noodles & Rice</h4></div><div class="price">₹279</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Chilli Paneer, Noodles & Rice</h4></div><div class="price">₹299</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chilli Chicken, Noodles & Rice</h4></div><div class="price">₹349</div></div>
+        </div>
+
+        <h2 id="soups" class="section-title">Soups & Salads</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Tomato Cream Soup</h4></div><div class="price">₹99</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Hot And Sour Soup</h4></div><div class="price">₹99</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Sweet Corn Soup</h4></div><div class="price">₹99</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Manchow Soup</h4></div><div class="price">₹99</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Murgh Shorba Soup</h4></div><div class="price">₹169</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Manchow Soup</h4></div><div class="price">₹129</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Green Salad</h4></div><div class="price">₹79</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Greek Salad</h4></div><div class="price">₹169</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Boiled Chicken Salad</h4></div><div class="price">₹299</div></div>
+        </div>
+
+        <h2 id="nv-starters" class="section-title">Non Veg Starters</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Tai Pai</h4></div><div class="price">₹299</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken 65</h4></div><div class="price">₹279</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Dragon Chicken</h4></div><div class="price">₹279</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chilli Chicken</h4></div><div class="price">₹279</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Murgh Seekh Kebab</h4></div><div class="price">₹399</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Murgh Malai Tikka</h4></div><div class="price">₹449</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Tandoori Murgh</h4></div><div class="price">₹289</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Lollipop [6 Pcs]</h4></div><div class="price">₹449</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Crispy Fish Fry</h4></div><div class="price">₹449</div></div>
+        </div>
+
+        <h2 id="v-starters" class="section-title">Veg Starters</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Chilli Paneer</h4></div><div class="price">₹279</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Paneer Tandoori Tikka</h4></div><div class="price">₹299</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Paneer Malai Tikka</h4></div><div class="price">₹329</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Hara Bhara Kebab</h4></div><div class="price">₹299</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Malai Chaap</h4></div><div class="price">₹269</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Honey Chilli Potato</h4></div><div class="price">₹219</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Manchurian Dry</h4></div><div class="price">₹249</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Crispy Mushroom</h4></div><div class="price">₹249</div></div>
+        </div>
+
+        <h2 id="main" class="section-title">Main Course</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Murgh Lababdar</h4></div><div class="price">₹289</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Butter Murgh Masala</h4></div><div class="price">₹289</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Rara Murgh</h4></div><div class="price">₹299</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Murgh Musallam</h4></div><div class="price">₹299</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Malai Kofta</h4></div><div class="price">₹299</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Paneer Lababdar</h4></div><div class="price">₹289</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Dal Makhani</h4></div><div class="price">₹219</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Dal Tadka</h4></div><div class="price">₹199</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Creamy Garlic Mushroom</h4></div><div class="price">₹319</div></div>
+        </div>
+
+        <h2 id="breads" class="section-title">Breads</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Tawa Roti</h4></div><div class="price">₹15</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Tawa Butter Naan</h4></div><div class="price">₹55</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Laccha Paratha</h4></div><div class="price">₹55</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Paneer Paratha</h4></div><div class="price">₹95</div></div>
+        </div>
+
+        <h2 id="rice" class="section-title">Rice & Biryani</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Biryani</h4></div><div class="price">₹249</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Biryani</h4></div><div class="price">₹329</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Jeera Rice</h4></div><div class="price">₹129</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Risotto</h4></div><div class="price">₹349</div></div>
+        </div>
+
+        <h2 id="chinese" class="section-title">Chinese Station</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Fried Rice</h4></div><div class="price">₹179</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Fried Rice</h4></div><div class="price">₹219</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Hakka Noodles</h4></div><div class="price">₹189</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Schezwan Noodles</h4></div><div class="price">₹229</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg American Chop Suey</h4></div><div class="price">₹249</div></div>
+        </div>
+
+        <h2 id="pizza" class="section-title">Pizza & Pasta</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Double Cheese Supreme Pizza</h4></div><div class="price">₹349</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Tikka Pizza</h4></div><div class="price">₹379</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg White Sauce Pasta</h4></div><div class="price">₹269</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Lasagna Pasta</h4></div><div class="price">₹399</div></div>
+        </div>
+
+        <h2 id="burgers" class="section-title">Burgers & Sandwiches</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Cheese Burger</h4></div><div class="price">₹99</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Burger</h4></div><div class="price">₹159</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Club Sandwich</h4></div><div class="price">₹199</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Barbeque Sandwich</h4></div><div class="price">₹269</div></div>
+        </div>
+
+        <h2 id="snacks" class="section-title">Snacks & Rolls</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Nachos With Salsa</h4></div><div class="price">₹189</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">French Fries</h4></div><div class="price">₹119</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Veg Kathi Roll</h4></div><div class="price">₹169</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="non-veg-dot">Chicken Kathi Roll</h4></div><div class="price">₹199</div></div>
+        </div>
+
+        <h2 id="beverages" class="section-title">Beverages & Shakes</h2>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Oreo Cream Cookie Shake</h4></div><div class="price">₹139</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">KitKat Choco Shake</h4></div><div class="price">₹149</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Masala Tea</h4></div><div class="price">₹59</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Cappuccino</h4></div><div class="price">₹79</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Blue Breezy Highball</h4></div><div class="price">₹139</div></div>
+            <div class="menu-item"><div class="item-info"><h4 class="veg-dot">Kala Khatta Tango</h4></div><div class="price">₹149</div></div>
+        </div>
+
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="menu.html" class="nav-item active">Menu</a>
+        <a href="gallery.html" class="nav-item">Gallery</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+    </nav>
+
+</body>
+</html>

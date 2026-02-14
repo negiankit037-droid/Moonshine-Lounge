@@ -7,16 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #050505; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; height: 100vh; display: flex; flex-direction: column; }
+        body { background-color: #050505; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
 
+        /* --- HEADER --- */
         .contact-header {
-            padding: 80px 5% 30px;
+            padding: 100px 5% 40px;
             text-align: center;
             background: linear-gradient(to bottom, #111, #050505);
         }
-        .contact-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-style: italic; color: #D4AF37; }
+        .contact-header h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-style: italic; color: #D4AF37; }
         .contact-header p { letter-spacing: 0.5em; font-size: 10px; color: #666; margin-top: 10px; text-transform: uppercase; }
 
+        /* --- CONTACT CONTENT --- */
         .contact-container {
             flex: 1;
             display: flex;
@@ -30,17 +32,18 @@
         }
 
         .info-box { width: 100%; }
-        .info-item { margin-bottom: 30px; }
-        .info-item h4 { font-size: 11px; text-transform: uppercase; color: #D4AF37; letter-spacing: 0.3em; margin-bottom: 8px; }
-        .info-item p, .info-item a { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 200; line-height: 1.6; }
+        .info-item { margin-bottom: 35px; }
+        .info-item h4 { font-size: 11px; text-transform: uppercase; color: #D4AF37; letter-spacing: 0.3em; margin-bottom: 10px; }
+        .info-item p, .info-item a { color: #fff; text-decoration: none; font-size: 1.1rem; font-weight: 200; line-height: 1.7; }
         
+        /* ACTION BUTTONS */
         .action-btns { 
             display: flex; 
             flex-direction: column; 
-            gap: 12px; 
-            margin-top: 20px; 
+            gap: 15px; 
+            margin-top: 25px; 
             width: 100%;
-            max-width: 350px;
+            max-width: 380px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -48,7 +51,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px 25px;
+            padding: 16px 25px;
             font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 0.2em;
@@ -59,15 +62,27 @@
         }
         .btn-call { background: #D4AF37; color: #000; }
         .btn-wa { border: 1px solid #25D366; color: #25D366; }
-        .btn-insta { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: white; }
+        .btn-insta { 
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+            color: white; 
+            box-shadow: 0 5px 15px rgba(220, 39, 67, 0.2);
+        }
+        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
 
+        /* --- FOOTER CREDIT --- */
         .footer-credit {
             padding: 40px 0 140px;
             text-align: center;
         }
-        .footer-credit p { font-size: 9px; letter-spacing: 0.4em; color: #444; text-transform: uppercase; }
+        .footer-credit p {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            color: #444;
+        }
         .footer-credit span { color: #D4AF37; font-weight: 600; }
 
+        /* --- FIXED BOTTOM NAVIGATION --- */
         .bottom-nav {
             position: fixed;
             bottom: 30px;
@@ -86,7 +101,7 @@
         .active { color: #D4AF37 !important; opacity: 1 !important; }
 
         @media (max-width: 600px) {
-            .contact-header h1 { font-size: 2.2rem; }
+            .contact-header h1 { font-size: 2.5rem; }
             .info-item p { font-size: 1rem; }
             .bottom-nav { width: 92%; gap: 12px; justify-content: center; }
         }
@@ -114,8 +129,10 @@
             </div>
 
             <div class="action-btns">
-                <a href="https://www.instagram.com/themoonshine_lounge?igsh=MWs2MTF6ZDFveGN1aA==" class="btn btn-insta" target="_blank">Follow Instagram</a>
+                <a href="https://www.instagram.com/themoonshine_lounge/" class="btn btn-insta" target="_blank">Follow on Instagram</a>
+                
                 <a href="https://wa.me/919568193120" class="btn btn-wa" target="_blank">WhatsApp Chat</a>
+                
                 <a href="tel:+919568193120" class="btn btn-call">Call Now</a>
             </div>
         </div>
